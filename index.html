@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Youtubeclone</title>
+    <script src="https://kit.fontawesome.com/a7ea477417.js" crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fab fa-youtube"></i>
+            <span class="title">Youtube</span>
+        </div>
+        <div class="icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </header>
+
+    <!-- video player -->
+	<section class="player">
+			<iframe frameborder="0" allowfullscreen="1" width="560" height="315" src="https://www.youtube.com/embed/67stn7Pu7s4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	</section>
+
+    <div class="info_upNext">
+            <!-- video info -->
+        <section class="info">
+            <!-- metadata -->
+            <div class="metadata">
+                <ul class="hashtags">
+                    <li>#유튜브 클론 코딩</li>
+                    <li>#이거 중요하지?</li>
+                    <li>#완전 귀찮아요</li>
+                </ul>
+                <div class="titleAndButton">
+                    <span class="title">
+                        사랑하는 유튜브 여러분 안녕하세요 오늘은 너무 중요한 CSS로 유튜브 클론코딩 하는 법을 알아보아요 ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎCSS 너무 재밌어요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
+                    </span>
+                    <button class="moreBtn"><i class="fas fa-caret-down"></i></button>
+                </div>
+                <span class="views">1M views 1 month ago</span>
+
+            </div>
+            <!-- actions -->
+            <div class="actions">
+                <li>
+                    <button><i class="active fas fa-thumbs-up"></i><span>1</span></button>
+                </li>
+
+                <li>
+                    <button><i class="active fas fa-thumbs-down"></i><span>10</span></button>
+                </li>
+
+                <li>
+                    <button><i class="fas fa-share"></i><span>Share</span></button>
+                </li>
+
+                <li>
+                    <button><i class="fas fa-plus"></i><span>Save</span></button>
+                </li>
+
+                <li>
+                    <button><i class="fab fa-font-awesome-flag"></i><span>Report</span></button>
+                </li>
+            </div>
+            <!-- channel desc -->
+            <div class="channel">
+                <div class="metadata">
+                    <img src="https://hof.pe.kr/wp-content/uploads/clubhouse_profile_image_type_1.png" alt="">
+                    <div  class="info">
+                        <span class="name">태현</span> 
+                        <span class="subscribers">1M subscribers</span>
+                    </div> 
+                </div>
+                <button class="subscribe">subscribe</button>
+            </div>
+        </section>
+	
+            <!-- upnext -->
+        <section class="upNext">
+            <span class="title">Up next</span>
+            <ul>
+                <li class="item">
+                    <div class="image"><img src="https://cdn.pixabay.com/photo/2017/01/26/18/09/length-landscape-2011238__480.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <span class="title">다음영상 1</span>
+                        <span class="name">사용자</span>
+                        <span class="views">10M views</span>
+                    </div>
+                    <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+                </li>
+                <li class="item">
+                    <div class="image"><img src="https://t1.daumcdn.net/cfile/tistory/2316E53D552BC49D2B" alt="">
+                    </div>
+                    <div class="info">
+                        <span class="title">다음영상 2</span>
+                        <span class="name">사용자</span>
+                        <span class="views">10M views</span>
+                    </div>
+                    <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+                </li>
+                <li class="item">
+                    <div class="image"><img src="https://gentlysallim.com/wp-content/uploads/2020/04/200408_F.jpg" alt="">
+                    </div>
+                    <div class="info">                    
+                        <span class="title">다음영상 3</span>
+                        <span class="name">사용자</span>
+                        <span class="views">10M views</span></div>
+                    <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
+
+<script>
+    //버튼 누르면 파란색 되고 값 올라가기 구현(클로저)
+    var btnClickHandler = (e) =>{
+        var count= Number(e.nextSibling.innerText)
+        var color=e.style.color;
+        return function(){
+            if(color==="#909090"){
+                ++count;
+                color="#045fd4";
+                e.nextSibling.innerText=count;
+                e.style.color=color;
+            }
+            else if(color==="#045fd4"){
+                --count;
+                color="#909090";
+
+                e.nextSibling.innerText=(count);
+                e.style.color=color;
+            }
+            else{
+                ++count;
+                color="#045fd4";
+                e.nextSibling.innerText=(count);
+                e.style.color=color;
+            }
+        }
+    }
+
+    const Btns = document.querySelectorAll("i.active");
+    Btns.forEach(function(e){
+        e.addEventListener("click",btnClickHandler(e)
+        )
+    })
+
+
+    
+
+    
+</script>

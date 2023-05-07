@@ -1,0 +1,10 @@
+##sass 바로 적용
+npx sass --watch style.scss style.css
+
+sass 연동
+sass style.scss style.css
+
+
+
+
+
